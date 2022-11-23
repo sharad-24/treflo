@@ -128,8 +128,8 @@ export default function PizzaCard(details) {
     <div>
       <div style={{ backgroundColor: '#051426' }} className={modal ? "blur" : ""}>
         <Navbar />
-        <div className='flex justify-between p-5 text-white'>
-          <div >
+        <div className='flex justify-between p-5 bg-white'>
+          <div>
             <TextField
               id="outlined-basic"
               className='text-white'
@@ -149,7 +149,7 @@ export default function PizzaCard(details) {
               label="Rating"
             />
           </div>
-          <div>
+          <div className='mt-3'>
             <h1>
               <Switch
                 checked={checked}

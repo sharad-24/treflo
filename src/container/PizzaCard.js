@@ -28,11 +28,11 @@ export default function PizzaCard(details) {
 
   const handleChangeSize = (event) => {
     setSelectedSizeValue(event.target.value);
-    console.log(selectedSizeValue)
+    // console.log(selectedSizeValue)
   };
   const handleChangeToppings = (event) => {
     setSelectedToppingsValue(event.target.value);
-    console.log(selectedToppingsValue)
+    // console.log(selectedToppingsValue)
   };
 
   let inputHandlerPrice = (e) => {
@@ -40,7 +40,7 @@ export default function PizzaCard(details) {
   };
 
   let inputHandlerRating = (e) => {
-    setInputTextRating(e.target.value);
+    setInputTextRating(e.target.value - 1);
   };
 
   const inputHandlerType = (event) => {
@@ -48,27 +48,27 @@ export default function PizzaCard(details) {
   };
 
   const filteredDataPrice = (data, filterPrice) => {
-    console.log({filterPrice})
+    // console.log({filterPrice})
       if(!filterPrice){
         return data;
       }else{
-        console.log("filter: ",data?.filter((ep) => ep.price.toString().includes(filterPrice)))
+        // console.log("filter: ",data?.filter((ep) => ep.price.toString().includes(filterPrice)))
         return data?.filter((ep) => ep.price.toString().includes(filterPrice))
       }
   }
 
   const filteredDataRating = (data, rating)=> {
-    console.log({rating})
+    // console.log({rating})
     if(!rating){
       return data;
     }else{
-      console.log("rating filter: ",data?.filter((ep) => ep.price.toString().includes(rating)))
+      // console.log("rating filter: ",data?.filter((ep) => ep.price.toString().includes(rating)))
       return data?.filter((ep) => ep.rating.toString().includes(rating))
     }
   }
 
   const filteredDataType = (data, type)=> {
-    console.log({type})
+    // console.log({type})
     if(!type){
       return data;
     }else{
@@ -119,7 +119,7 @@ export default function PizzaCard(details) {
     setModal(false);
   }
 
-  console.log(details?.details);
+  // console.log(details?.details);
 
   if(!details){
     return <div> Loading...</div>
@@ -144,6 +144,7 @@ export default function PizzaCard(details) {
               id="outlined-basic"
               onChange={inputHandlerRating}
               variant="outlined"
+              type="number"
               fullWidth
               label="Rating"
             />
